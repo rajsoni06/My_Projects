@@ -4,27 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <title>Links website</title>
+    <title>Raj Anand Soni's Projects</title>
     <style>
-
       body {
-          background-image: url(https://media.istockphoto.com/id/1272795679/vector/tile-abstract-shape-background.jpg?s=612x612&w=0&k=20&c=EpSNdbw6rThPmZ4LJztrNok2ReGKgrvVBNAEopVuzoM=); /* The image used for background*/
-          background-repeat: no-repeat; /* Do not repeat the image */
-          background-position: center; /* Center the image */
-          background-size: cover; /* Resize the background image to cover the entire container */
+        background-image: url("https://media.istockphoto.com/id/1272795679/vector/tile-abstract-shape-background.jpg?s=612x612&w=0&k=20&c=EpSNdbw6rThPmZ4LJztrNok2ReGKgrvVBNAEopVuzoM=");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
       }
 
       .container {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
+        max-width: 530px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        text-align: center;
       }
 
-      .image-container {
-        text-align: center;
-        width: 100%;
+      .image-container img {
+        border-radius: 50%;
+        border: 4px solid #9c27b0;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .w3-text-white p {
+        margin: 10px 0;
+      }
+
+      .w3-text-white span {
+        background-color: #0078d7;
+        padding: 5px 10px;
+        border-radius: 5px;
       }
 
       .links-container {
@@ -32,86 +51,112 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 19px;
+        gap: 20px;
+        margin-top: 30px;
       }
 
       .link {
-        min-width: 50% !important;
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        padding: 12px;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        background-color: rgba(156, 39, 176, 0.8);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
       }
 
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
+      .link:hover {
+        background-color: rgba(156, 39, 176, 1);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        border-color: #fff;
       }
-      @media (min-width: 992px) {
-        .container {
-          max-width: 960px;
-        }
-      }
-      @media (min-width: 768px) {
-      .container {
-          max-width: 720px;
-        }
-
-      .link {
-          width: 100%;
-        }
-      }
-      @media (min-width: 576px) {
-      .container {
-          max-width: 540px;
-        }
-      }
-
-      .w3-purple, .w3-hover-purple:hover {
-        color: #fff!important;
-        background-color: rgba(156, 39, 176, 0.6) !important;
-      }
-
     </style>
   </head>
 
-  <body class="w3-white" >
+  <body>
     <!-- Content container -->
     <div class="container">
-      <!-- Image and name container. Change to your picture here. -->
+      <!-- Image and name container. -->
       <div class="image-container">
         <img
-          src= "https://media.licdn.com/dms/image/v2/D5635AQGnrhz4ZOMwhA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1718738257649?e=1723291200&v=beta&t=heiyGXh-wNBwM2EM7mbK6jhQU-BkcpRrpdFchd7cqcQ"
-          class="w3-margin"
-          alt="Person"
-          max-width="100%"
-          height="150px"
-          style="border-radius: 50%"
+          src="https://media.licdn.com/dms/image/v2/D5635AQGnrhz4ZOMwhA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1718738257649?e=1723291200&v=beta&t=heiyGXh-wNBwM2EM7mbK6jhQU-BkcpRrpdFchd7cqcQ"
+          alt="Raj Anand Soni"
         />
+      </div>
 
-        <div class="w3-text-white">
-          <p class="w3-text-white w3-large"> Welcome to <span class="w3-tag w3-large w3-round w3-blue w3-text-white"><strong>Raj Anand Soni's</strong> </span> link site!
-          </p>
-          <p class="w3-large"><strong>Check out my all projects.</strong></p>
-        </div>
+      <div class="w3-text-white">
+        <p class="w3-large">
+          Welcome to
+          <span><strong>Raj Anand Soni's</strong></span> project site!
+        </p>
+        <p class="w3-large"><strong>Check out my projects below.</strong></p>
+      </div>
 
-        <!-- Links section 1. Replace the # inside of the "" with your links. -->
-        <div class="links-container">
-
-             <a href="  https://rajsoni06.github.io/Social_App/Social_Media.html   " class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fa fa-code"></i>Social Application</a>
-          <a href="https://rajsoni06.github.io/Face_Recognition_Attendance_System/Face-Recognition-Attendance-System.html" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fa fa-code"></i> Face Recognition </a>
-          <a href="https://rajsoni06.github.io/Universe_Cosmos/Universe/index.html" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-linkedin"></i> Universe Website </a>
-           <a href="https://rajsoni06.github.io/Space_X_Website/Space_X/index.html" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-linkedin"></i> SpaceX Website </a>
-          <a href="https://rajsoni06.github.io/Nihongo_Journey/Nihongo-Journey.html" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-twitter"></i> Nihongo Journey Site </a>
-          <a href="   https://rajsoni06.github.io/Responsive_UI_Design/  " class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-instagram"></i>Responsive UI Design</a>
-           <a href="https://chat-app-jsm-video.netlify.app" class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-instagram"></i>React Video Chat App</a>
-           <a href="         " class="w3-button w3-hover-pink w3-large w3-round w3-purple w3-border link" target="_blank"><i class="fab fa-instagram"></i>Web3 Blockchain App</a>
-           <a href="http://bit.ly/3rtlM5C"  target="_blank"><i class="fa fa-code"></i> </a>
-           
-          
-         
-        </div>
+      <!-- Links section. -->
+      <div class="links-container">
+        <a
+          href="https://rajsoni06.github.io/Social_App/Social_Media.html"
+          class="link"
+          target="_blank"
+        >
+          <i class="fa fa-code"></i> Social Application
+        </a>
+        <a
+          href="https://rajsoni06.github.io/Face_Recognition_Attendance_System/Face-Recognition-Attendance-System.html"
+          class="link"
+          target="_blank"
+        >
+          <i class="fa fa-code"></i> Face Recognition
+        </a>
+        <a
+          href="https://rajsoni06.github.io/Universe_Cosmos/Universe/index.html"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i> Universe Website
+        </a>
+        <a
+          href="https://rajsoni06.github.io/Space_X_Website/Space_X/index.html"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i> SpaceX Website
+        </a>
+        <a
+          href="https://rajsoni06.github.io/Nihongo_Journey/Nihongo-Journey.html"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-twitter"></i> Nihongo Journey Site
+        </a>
+        <a
+          href="https://rajsoni06.github.io/Responsive_UI_Design/"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i> Responsive UI Design
+        </a>
+        <a
+          href="https://chat-app-jsm-video.netlify.app"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i> React Video Chat App
+        </a>
+        <a
+          href="#"
+          class="link"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i> Web3 Blockchain App
+        </a>
       </div>
     </div>
-
-    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-
   </body>
 </html>
