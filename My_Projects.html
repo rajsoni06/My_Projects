@@ -8,9 +8,9 @@
     <title>Raj Anand Soni's Projects</title>
     <style>
       :root {
-        --glass-bg: rgba(255, 255, 255, 0.45);
-        --glass-border: rgba(255, 255, 255, 0.6);
-        --glass-hover: rgba(255, 255, 255, 0.75);
+        --primary-glow: rgba(255, 255, 255, 0.4);
+        --card-bg: rgba(255, 255, 255, 0.5);
+        --card-border: rgba(255, 255, 255, 0.65);
         --text-color: #2c3e50;
       }
 
@@ -20,21 +20,22 @@
         width: 100%;
         min-height: 100vh;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        /* Bright Fluid Base shifting between Cyan, Blue, and Mint Green */
-        background: linear-gradient(135deg, #e0f7fa, #e1f5fe, #e8f5e9, #b2ebf2);
-        background-size: 400% 400%;
-        animation: brightLiquid 14s ease infinite;
         color: var(--text-color);
         overflow-x: hidden;
+        
+        /* Smooth, abstract background looping from right to left */
+        background: linear-gradient(270deg, #e0f7fa, #fff9c4, #e8f5e9, #b2ebf2, #ffe0b2, #e0f7fa);
+        background-size: 400% 100%;
+        animation: gradientShiftRightToLeft 18s linear infinite;
       }
 
-      @keyframes brightLiquid {
+      /* Background shift going right to left */
+      @keyframes gradientShiftRightToLeft {
         0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        100% { background-position: 400% 50%; }
       }
 
-      /* Interactive Fluid Visualizer Layer */
+      /* Interactive Fluid Ambient Layer */
       #fluid-canvas {
         position: fixed;
         top: 0;
@@ -46,55 +47,59 @@
         opacity: 0.85;
       }
 
-      /* Main Layout Viewport */
+      /* Main Content Container with minimized top spacing */
       .container {
         position: relative;
         z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
-        padding: 30px 20px;
+        padding: 15px 20px 40px 20px;
         box-sizing: border-box;
       }
 
-      /* Light iOS Glassmorphism Card */
+      /* Glassmorphism Profile Card Layout */
       .profile-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
+        background: var(--card-bg);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid var(--card-border);
         padding: 24px 20px;
-        width: 100%;
-        max-width: 350px;
-        box-shadow: 0 15px 35px rgba(31, 45, 61, 0.08);
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(31, 45, 61, 0.05);
         display: flex;
         flex-direction: column;
         align-items: center;
-        transform: translateY(20px);
+        width: 100%;
+        max-width: 330px;
+        transform: translateY(10px);
         opacity: 0;
-        animation: iOSSpawn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation: cardSpawn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
       .image-container {
         margin-bottom: 12px;
-      }
-
-      .image-container img {
+        overflow: hidden;
         border-radius: 50%;
-        border: 3px solid #ffffff;
-        width: 95px;
-        height: 95px;
-        object-fit: cover;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-        transition: transform 0.4s cubic-bezier(0.15, 1, 0.3, 1);
+        width: 88px;
+        height: 88px;
+        border: 2.5px solid #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         background-color: #e0f2f1;
       }
 
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.1);
+        transition: transform 0.3s cubic-bezier(0.15, 1, 0.3, 1);
+      }
+
       .image-container img:hover {
-        transform: scale(1.05);
+        transform: scale(1.18);
       }
 
       .header-text {
@@ -103,18 +108,18 @@
       }
 
       .header-text p {
-        margin: 2px 0;
-        font-size: 0.95em;
+        margin: 0;
+        font-size: 0.88em;
         color: #5c6b73;
         font-weight: 500;
       }
 
       .header-text .title {
-        font-size: 1.35em;
+        font-size: 1.25em;
         font-weight: 700;
         color: #1a2a3a;
         display: block;
-        margin: 2px 0 4px 0;
+        margin-top: 2px;
         letter-spacing: -0.3px;
       }
 
@@ -122,22 +127,22 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 9px;
+        gap: 10px;
       }
 
-      /* Compact High-Contrast Buttons */
+      /* Compact, resized link UI button elements */
       .link {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 11px 16px;
-        font-size: 14px;
+        padding: 9px 13px;
+        font-size: 13px;
         font-weight: 600;
         color: #2c3e50;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.45);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 11px;
         transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
         box-sizing: border-box;
       }
@@ -147,18 +152,21 @@
         font-size: 15px;
         width: 20px;
         text-align: center;
-        color: #0288d1;
       }
 
       .link:hover {
-        background: var(--glass-hover);
-        border-color: #00b0ff;
+        background: rgba(255, 255, 255, 0.9);
         transform: translateY(-1.5px);
-        color: #0288d1;
-        box-shadow: 0 6px 14px rgba(0, 176, 255, 0.15);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+        border-color: rgba(255, 255, 255, 0.9);
       }
 
-      @keyframes iOSSpawn {
+      /* Distinctive Brand Hover Modifications */
+      .link:hover i {
+        transform: scale(1.1);
+      }
+
+      @keyframes cardSpawn {
         to {
           opacity: 1;
           transform: translateY(0);
@@ -166,42 +174,42 @@
       }
 
       @media (max-width: 480px) {
+        .container {
+          padding-top: 10px;
+        }
         .profile-card {
-          max-width: 310px;
+          max-width: 295px;
           padding: 20px 16px;
         }
         .link {
-          font-size: 13.5px;
-          padding: 10px 14px;
+          font-size: 12.5px;
+          padding: 8px 12px;
         }
       }
     </style>
   </head>
   <body>
 
-    <!-- Fluid Background Canvas -->
     <canvas id="fluid-canvas"></canvas>
 
     <div class="container">
       <div class="profile-card">
         <div class="image-container">
-          <!-- Your image link with safe structural fallback layout -->
           <img
-  src="https://raj-soni-portfolio-site.netlify.app/assets/hero/My_Pic.jpg"
-  alt="Raj Anand Soni"
-  style="transform: scale(1.1); object-fit: cover; border-radius: 50%;"
-  onerror="if (this.src != 'https://api.dicebear.com/7.x/initials/svg?seed=Raj&backgroundColor=00b0ff') this.src='https://api.dicebear.com/7.x/initials/svg?seed=Raj&backgroundColor=00b0ff';"
-/>
+            src="https://raj-soni-portfolio-site.netlify.app/assets/hero/My_Pic.jpg"
+            alt="Raj Anand Soni"
+            onerror="if (this.src != 'https://api.dicebear.com/7.x/initials/svg?seed=Raj&backgroundColor=00b0ff') this.src='https://api.dicebear.com/7.x/initials/svg?seed=Raj&backgroundColor=00b0ff';"
+          />
         </div>
 
         <div class="header-text">
           <p>Welcome to</p>
           <span class="title">Raj Anand Soni's Hub</span>
-          <p style="font-size: 0.85em; color: #7f8c8d;">Interactive Project Directory</p>
+          <p style="font-size: 0.82em; color: #7f8c8d; margin-top: 3px;">Interactive Project Directory</p>
         </div>
 
         <div class="links-container">
-            <a href="https://nihongo-journey.netlify.app/" class="link" target="_blank">
+          <a href="https://nihongo-journey.netlify.app/" class="link" target="_blank">
             <i class="fas fa-language" style="color: #2e7d32;"></i> Nihongo Journey Site
           </a>
           <a href="https://nihonhub.netlify.app/" class="link" target="_blank">
@@ -229,7 +237,6 @@
       </div>
     </div>
 
-    <!-- Script generating high-brightness cyan/blue/mint interactive ambient elements -->
     <script>
       const canvas = document.getElementById('fluid-canvas');
       const ctx = canvas.getContext('2d');
@@ -248,38 +255,51 @@
         mouse.y = e.clientY;
       });
 
-      class LightOrb {
-        constructor(color, sizeMult) {
+      class FluidBlob {
+        constructor(baseColors, radiusModifier) {
           this.x = Math.random() * width;
           this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 0.9;
-          this.vy = (Math.random() - 0.5) * 0.9;
-          this.baseRadius = (Math.random() * 140 + 160) * sizeMult;
+          
+          // Consistent right-to-left horizontal force allocation
+          this.vx = -(Math.random() * 0.4 + 0.3);
+          this.vy = (Math.random() - 0.5) * 0.4;
+          
+          this.baseRadius = (Math.random() * 130 + 150) * radiusModifier;
           this.radius = this.baseRadius;
-          this.color = color;
+          this.colorIdx = 0;
+          this.colors = baseColors;
+          this.colorTimer = 0;
         }
 
         update() {
           this.x += this.vx;
           this.y += this.vy;
 
-          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.x < -this.radius) this.x = width + this.radius;
           if (this.y < 0 || this.y > height) this.vy *= -1;
 
           let dx = mouse.x - this.x;
           let dy = mouse.y - this.y;
-          let dist = Math.sqrt(dx * dx + dy * dy);
+          let distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (dist < 300) {
-            this.radius = this.baseRadius + (300 - dist) * 0.2;
+          if (distance < 260) {
+            this.radius = this.baseRadius + (260 - distance) * 0.22;
           } else {
             this.radius = this.radius + (this.baseRadius - this.radius) * 0.05;
+          }
+
+          this.colorTimer += 0.002;
+          if(this.colorTimer > 1) {
+            this.colorTimer = 0;
+            this.colorIdx = (this.colorIdx + 1) % this.colors.length;
           }
         }
 
         draw() {
+          let nextIdx = (this.colorIdx + 1) % this.colors.length;
           let gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-          gradient.addColorStop(0, this.color);
+          
+          gradient.addColorStop(0, this.colors[this.colorIdx]);
           gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
           ctx.beginPath();
@@ -289,23 +309,29 @@
         }
       }
 
-      // Strictly bright Cyan, Deep Sky Blue, and Mint Green orbs
-      const orbs = [
-        new LightOrb('rgba(0, 229, 255, 0.45)', 1),  // Vibrant Cyan
-        new LightOrb('rgba(41, 121, 255, 0.35)', 1.3), // Rich Blue
-        new LightOrb('rgba(105, 240, 174, 0.4)', 1.1)  // Mint Green
+      const abstractColors = [
+        'rgba(0, 229, 255, 0.35)',
+        'rgba(105, 240, 174, 0.33)',
+        'rgba(255, 171, 64, 0.25)',
+        'rgba(41, 121, 255, 0.28)'
       ];
 
-      function loop() {
+      const blobs = [
+        new FluidBlob(abstractColors, 1),
+        new FluidBlob(['rgba(105, 240, 174, 0.3)', 'rgba(41, 121, 255, 0.3)', 'rgba(255, 110, 64, 0.2)'], 1.25),
+        new FluidBlob(['rgba(255, 235, 59, 0.25)', 'rgba(0, 229, 255, 0.3)', 'rgba(233, 30, 99, 0.15)'], 1.1)
+      ];
+
+      function renderLoop() {
         ctx.clearRect(0, 0, width, height);
-        orbs.forEach(orb => {
-          orb.update();
-          orb.draw();
+        blobs.forEach(blob => {
+          blob.update();
+          blob.draw();
         });
-        requestAnimationFrame(loop);
+        requestAnimationFrame(renderLoop);
       }
 
-      loop();
+      renderLoop();
     </script>
   </body>
 </html>
