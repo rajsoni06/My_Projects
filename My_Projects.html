@@ -4,13 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <title>Raj Anand Soni's Projects</title>
     <style>
       :root {
-        --glass-bg: rgba(255, 255, 255, 0.08);
-        --glass-border: rgba(255, 255, 255, 0.2);
-        --glass-hover: rgba(255, 255, 255, 0.18);
+        --glass-bg: rgba(255, 255, 255, 0.45);
+        --glass-border: rgba(255, 255, 255, 0.6);
+        --glass-hover: rgba(255, 255, 255, 0.75);
+        --text-color: #2c3e50;
       }
 
       body, html {
@@ -19,21 +20,21 @@
         width: 100%;
         min-height: 100vh;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        /* Dynamic Liquid Abstract Mesh Background */
-        background: linear-gradient(135deg, #1f1135, #511c74, #0091ea, #d500f9);
+        /* Bright, Energetic, Non-Purple Abstract Fluid Base */
+        background: linear-gradient(135deg, #e0f7fa, #fff9c4, #ffe0b2, #e8f5e9);
         background-size: 400% 400%;
-        animation: liquidMesh 18s ease infinite;
-        color: white;
+        animation: brightLiquid 16s ease infinite;
+        color: var(--text-color);
         overflow-x: hidden;
       }
 
-      @keyframes liquidMesh {
+      @keyframes brightLiquid {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
 
-      /* Interactive 3D Liquid Canvas */
+      /* Dynamic Bright Fluid Visualizer Layer */
       #fluid-canvas {
         position: fixed;
         top: 0;
@@ -42,11 +43,10 @@
         height: 100%;
         z-index: 1;
         pointer-events: none;
-        mix-blend-mode: screen;
-        opacity: 0.55;
+        opacity: 0.8;
       }
 
-      /* Container Setup */
+      /* Main Layout Viewport */
       .container {
         position: relative;
         z-index: 2;
@@ -55,21 +55,21 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        padding: 40px 20px;
+        padding: 30px 20px;
         box-sizing: border-box;
       }
 
-      /* iOS Glassmorphism Profile Shell */
+      /* Premium Light iOS Glassmorphism Shell */
       .profile-card {
         background: var(--glass-bg);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border: 1px solid var(--glass-border);
         border-radius: 24px;
         padding: 24px 20px;
         width: 100%;
         max-width: 350px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 15px 35px rgba(31, 45, 61, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.5);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -82,38 +82,40 @@
         margin-bottom: 12px;
       }
 
-      /* Google Drive Hosted Direct File URL */
+      /* Universal Direct Fallback Secured Profile Frame */
       .image-container img {
         border-radius: 50%;
-        border: 2.5px solid rgba(255, 255, 255, 0.85);
+        border: 3px solid #ffffff;
         width: 90px;
         height: 90px;
         object-fit: cover;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
         transition: transform 0.4s cubic-bezier(0.15, 1, 0.3, 1);
+        background-color: #e0f2f1;
       }
 
       .image-container img:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
       }
 
       .header-text {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
 
       .header-text p {
         margin: 2px 0;
         font-size: 0.95em;
-        color: rgba(255, 255, 255, 0.85);
+        color: #5c6b73;
+        font-weight: 500;
       }
 
       .header-text .title {
         font-size: 1.35em;
-        font-weight: 600;
-        color: #ffffff;
+        font-weight: 700;
+        color: #1a2a3a;
         display: block;
-        margin: 2px 0 6px 0;
+        margin: 2px 0 4px 0;
         letter-spacing: -0.3px;
       }
 
@@ -124,18 +126,18 @@
         gap: 9px;
       }
 
-      /* Streamlined iOS-style Compact Link Rows */
+      /* Light-Mode High Contrast Compact iOS Rows */
       .link {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         padding: 11px 16px;
         font-size: 14px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.95);
+        font-weight: 600;
+        color: #2c3e50;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 12px;
         transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
         box-sizing: border-box;
@@ -146,15 +148,15 @@
         font-size: 15px;
         width: 20px;
         text-align: center;
-        color: rgba(255, 255, 255, 0.8);
+        color: #0091ea;
       }
 
       .link:hover {
         background: var(--glass-hover);
-        border-color: rgba(255, 255, 255, 0.35);
+        border-color: #0091ea;
         transform: translateY(-1.5px);
-        color: #ffffff;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        color: #0091ea;
+        box-shadow: 0 6px 14px rgba(0, 145, 234, 0.12);
       }
 
       @keyframes iOSSpawn {
@@ -178,52 +180,56 @@
   </head>
   <body>
 
-    <!-- Liquid Glass Distortion Layer -->
+    <!-- Bright Abstract Fluid Light Canvas Overlay -->
     <canvas id="fluid-canvas"></canvas>
 
     <div class="container">
       <div class="profile-card">
         <div class="image-container">
-          <!-- Fixed Direct-Download ID Endpoint Link -->
+          <!-- Direct access endpoint + local fallback protection -->
           <img
             src="https://docs.google.com/uc?export=download&id=122JfqqQkYYByjKCtv6Qi5e5cJ9TsMZqy"
             alt="Raj Anand Soni"
+            onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Raj';"
           />
         </div>
 
         <div class="header-text">
           <p>Welcome to</p>
           <span class="title">Raj Anand Soni's Hub</span>
-          <p style="font-size: 0.85em; color: rgba(255,255,255,0.6);">Interactive Project Directory</p>
+          <p style="font-size: 0.85em; color: #7f8c8d;">Interactive Project Directory</p>
         </div>
 
         <div class="links-container">
+          <a href="https://nihonhub.netlify.app/" class="link" target="_blank">
+            <i class="fas fa-torii-gate" style="color: #ff5722;"></i> NihonHub
+          </a>
           <a href="https://rajsoni06.github.io/Universe_Cosmos/Universe/index.html" class="link" target="_blank">
-            <i class="fas fa-globe"></i> Universe Website
+            <i class="fas fa-globe" style="color: #0288d1;"></i> Universe Website
           </a>
           <a href="https://rajsoni06.github.io/Space_X_Website/Space_X/index.html" class="link" target="_blank">
-            <i class="fas fa-rocket"></i> SpaceX Website
+            <i class="fas fa-rocket" style="color: #f57c00;"></i> SpaceX Website
           </a>
           <a href="https://nihongo-journey.netlify.app/" class="link" target="_blank">
-            <i class="fas fa-language"></i> Nihongo Journey Site
+            <i class="fas fa-language" style="color: #4caf50;"></i> Nihongo Journey Site
           </a>
           <a href="https://rajsoni06.github.io/Responsive_UI_Design/" class="link" target="_blank">
-            <i class="fas fa-desktop"></i> Responsive UI Design
+            <i class="fas fa-desktop" style="color: #607d8b;"></i> Responsive UI Design
           </a>
           <a href="https://chat-app-jsm-video.netlify.app" class="link" target="_blank">
-            <i class="fas fa-video"></i> React Video Chat App
+            <i class="fas fa-video" style="color: #e91e63;"></i> React Video Chat App
           </a>
           <a href="https://ping-connect.vercel.app/login" class="link" target="_blank">
-            <i class="fas fa-comments"></i> Social Application
+            <i class="fas fa-comments" style="color: #00abc5;"></i> Social Application
           </a>
           <a href="https://rajsoni06.github.io/Face_Recognition_Attendance_System/Face-Recognition-Attendance-System.html" class="link" target="_blank">
-            <i class="fas fa-user"></i> Face Recognition
+            <i class="fas fa-user-shield" style="color: #2e7d32;"></i> Face Recognition
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Background script generating shifting liquid colors beneath the components -->
+    <!-- Script generating bright, responsive color ambient tracking -->
     <script>
       const canvas = document.getElementById('fluid-canvas');
       const ctx = canvas.getContext('2d');
@@ -246,9 +252,9 @@
         constructor(color, sizeMult) {
           this.x = Math.random() * width;
           this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 1.2;
-          this.vy = (Math.random() - 0.5) * 1.2;
-          this.baseRadius = (Math.random() * 120 + 160) * sizeMult;
+          this.vx = (Math.random() - 0.5) * 1.0;
+          this.vy = (Math.random() - 0.5) * 1.0;
+          this.baseRadius = (Math.random() * 140 + 170) * sizeMult;
           this.radius = this.baseRadius;
           this.color = color;
         }
@@ -264,8 +270,8 @@
           let dy = mouse.y - this.y;
           let dist = Math.sqrt(dx * dx + dy * dy);
           
-          if (dist < 350) {
-            this.radius = this.baseRadius + (350 - dist) * 0.2;
+          if (dist < 300) {
+            this.radius = this.baseRadius + (300 - dist) * 0.25;
           } else {
             this.radius = this.radius + (this.baseRadius - this.radius) * 0.05;
           }
@@ -274,7 +280,7 @@
         draw() {
           let gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
           gradient.addColorStop(0, this.color);
-          gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -283,10 +289,11 @@
         }
       }
 
+      // Bright Warm/Cool Ambient Blobs (No Purples/Darks)
       const orbs = [
-        new LightOrb('rgba(0, 229, 255, 0.35)', 1),
-        new LightOrb('rgba(213, 0, 249, 0.35)', 1.2),
-        new LightOrb('rgba(81, 28, 116, 0.4)', 1.4)
+        new LightOrb('rgba(128, 222, 234, 0.5)', 1), // Mint Teal
+        new LightOrb('rgba(255, 224, 130, 0.5)', 1.3), // Soft Gold
+        new LightOrb('rgba(255, 204, 188, 0.4)', 1.1)  // Light Coral
       ];
 
       function loop() {
