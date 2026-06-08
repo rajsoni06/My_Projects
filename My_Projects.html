@@ -46,6 +46,50 @@
         pointer-events: none;
         opacity: 0.85;
       }
+      /* High-Fidelity Glassmorphism Button Elements */
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 9px 13px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+        
+        /* Glassmorphism core properties */
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 11px;
+        box-shadow: 0 4px 15px rgba(31, 45, 61, 0.03), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        
+        transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-sizing: border-box;
+      }
+
+      .link i {
+        margin-right: 12px;
+        font-size: 15px;
+        width: 20px;
+        text-align: center;
+        transition: transform 0.2s ease;
+      }
+
+      /* Hover reflection and highlight states */
+      .link:hover {
+        background: rgba(255, 255, 255, 0.45);
+        border-color: rgba(255, 255, 255, 0.7);
+        transform: translateY(-1.5px);
+        box-shadow: 0 6px 18px rgba(31, 45, 61, 0.06), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+
+      .link:hover i {
+        transform: scale(1.1);
+      }
 
       /* Main Content Container with minimized top spacing */
       .container {
